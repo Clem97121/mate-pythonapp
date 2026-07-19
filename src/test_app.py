@@ -12,14 +12,11 @@ def client():
    app.config['TESTING'] = True
    client = app.test_client()
 
-
    # Setup the database
    with app.app_context():
        db.create_all()
 
-
    yield client
-
 
    # Teardown the database
    with app.app_context():
@@ -32,7 +29,6 @@ def test_home_page(client):
    response = client.get('/')
    assert b'Docker is Awesome!' in response.data
    assert b'Page reload count: 1' in response.data
-
 
    # Check if counter increments
    second_response = client.get('/')
@@ -68,4 +64,3 @@ def test_external_call(client):
        response = client.get('/external-call')
        assert b'Extarnal call response: Success' in response.data
        assert response.status_code == 200
-
