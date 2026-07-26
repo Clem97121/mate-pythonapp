@@ -151,7 +151,7 @@ jobs:
 
     - name: Deploy Helm to Development
       run: |
-        helm upgrade --install --atomic --wait --timeout 3600s --debug kube2py ./kube2py-*.tgz
+        helm upgrade --install --atomic --wait --timeout 3600s --debug kube2py ./kube2py-*.tgz \
           -n mateapp \
           --create-namespace \
           -f ./kube2py/values.yaml \
