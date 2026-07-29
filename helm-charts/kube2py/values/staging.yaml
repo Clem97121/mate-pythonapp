@@ -15,13 +15,13 @@ kube2py:
 
   resources:
     requests:
-      memory: "256Mi"
-      cpu: "100m"
+      memory: "64Mi"
+      cpu: "20m"
     limits:
-      memory: "256Mi"
-      cpu: "100m"
+      memory: "64Mi"
+      cpu: "20m"
 
   hpa:
     enabled: true
-    minReplicas: 3
-    maxReplicas: 5
+    minReplicas: 1
+    maxReplicas: 2
